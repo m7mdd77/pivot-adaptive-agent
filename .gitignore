@@ -1,0 +1,12 @@
+.env
+data/
+node_modules/
+.npm-cache/
+outputs/
+*.sqlite*
+
+.sites-runtime/
+.wrangler/
+.vinext/
+dist/
+*.tsbuildinfo

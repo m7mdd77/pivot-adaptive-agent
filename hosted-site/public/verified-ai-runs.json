@@ -1,0 +1,1246 @@
+{
+  "label": "Recorded genuine local DeepSeek runs; not live public inference",
+  "scope": "Synthetic fulfillment only",
+  "verifiedOn": "2026-10-14",
+  "runs": [
+    {
+      "scenarioId": "stock-loss",
+      "verifiedAt": "2026-10-14T15:24:18.245Z",
+      "goal": {
+        "id": "repair-kits",
+        "quantity": 12,
+        "budgetCents": 27000,
+        "deadlineMinute": 180
+      },
+      "model": "deepseek-v4-flash",
+      "attempts": [
+        {
+          "id": "86b6a3f1-1b2f-48ba-982e-070b7f4a6e33",
+          "model": "deepseek-v4-flash",
+          "status": "accepted",
+          "contextHash": "a74d1855db9d1219a786c82ffd99122bc7bae84d06e80bdde09ab7fd7856b436",
+          "candidate": {
+            "supplierId": "A",
+            "worldVersion": 1,
+            "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+            "steps": [
+              "reserve",
+              "collect",
+              "dispatch",
+              "confirm"
+            ],
+            "reason": "Atlas Parts (A) is the cheapest feasible supplier: 12 units at 1800 = 21600 + 1200 shipping = 22800 cents, within the 27000 budget, and lead time 60 gives arrival at minute 60, before the 180 deadline. B costs 26400 and C costs 36000 (over budget)."
+          },
+          "usage": {
+            "inputTokens": 452,
+            "outputTokens": 350,
+            "totalTokens": 802,
+            "cacheReadTokens": 0,
+            "cacheCreationTokens": 0
+          }
+        },
+        {
+          "id": "cd3620cd-426f-4447-8947-cae7c8715775",
+          "model": "deepseek-v4-flash",
+          "status": "accepted",
+          "contextHash": "9216520506c9a21b183d17fd17279aa344c16b66b6dd2f07385e86c9eb380428",
+          "candidate": {
+            "supplierId": "B",
+            "worldVersion": 2,
+            "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+            "steps": [
+              "reserve",
+              "collect",
+              "dispatch",
+              "confirm"
+            ],
+            "reason": "Supplier B is the cheapest supplier with enough stock (12 units available): 12×2100 + 1200 shipping = 26400 cents, within the 27000 budget, and lead time 90 minutes arrives at minute 100, before the deadline of 180. Supplier A has 0 available and Supplier C costs 36000+1200, over budget."
+          },
+          "usage": {
+            "inputTokens": 452,
+            "outputTokens": 350,
+            "totalTokens": 802,
+            "cacheReadTokens": 0,
+            "cacheCreationTokens": 0
+          }
+        }
+      ],
+      "metrics": {
+        "mode": "adaptive",
+        "status": "completed",
+        "goalAchieved": true,
+        "delivered": 12,
+        "spendCents": 26400,
+        "heldCents": 0,
+        "arrivalMinute": 100,
+        "originalForecast": 60,
+        "currentRouteForecast": 100,
+        "revisions": 2,
+        "compensations": 0,
+        "planningCalls": 2,
+        "constraintViolations": 0,
+        "auditValid": true
+      },
+      "plans": [
+        {
+          "id": "0b706d16-dce0-41d0-83a3-12a1caa5ce3f",
+          "version": 1,
+          "parentId": null,
+          "supplierId": "A",
+          "worldVersion": 1,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Initial plan: Atlas meets the quantity, budget and delivery deadline.",
+          "assumptions": {
+            "supplierId": "A",
+            "totalCents": 22800,
+            "arrivalMinute": 60,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 0,
+          "completedAtCreation": [],
+          "trigger": null
+        },
+        {
+          "id": "d1c9e5c5-71d5-4ea1-9769-7ec65389a1e5",
+          "version": 2,
+          "parentId": "0b706d16-dce0-41d0-83a3-12a1caa5ce3f",
+          "supplierId": "A",
+          "worldVersion": 1,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Atlas Parts (A) is the cheapest feasible supplier: 12 units at 1800 = 21600 + 1200 shipping = 22800 cents, within the 27000 budget, and lead time 60 gives arrival at minute 60, before the 180 deadline. B costs 26400 and C costs 36000 (over budget).",
+          "assumptions": {
+            "supplierId": "A",
+            "totalCents": 22800,
+            "arrivalMinute": 60,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 0,
+          "completedAtCreation": [],
+          "trigger": null
+        },
+        {
+          "id": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+          "version": 3,
+          "parentId": "d1c9e5c5-71d5-4ea1-9769-7ec65389a1e5",
+          "supplierId": "B",
+          "worldVersion": 2,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Supplier B is the cheapest supplier with enough stock (12 units available): 12×2100 + 1200 shipping = 26400 cents, within the 27000 budget, and lead time 90 minutes arrives at minute 100, before the deadline of 180. Supplier A has 0 available and Supplier C costs 36000+1200, over budget.",
+          "assumptions": {
+            "supplierId": "B",
+            "totalCents": 26400,
+            "arrivalMinute": 100,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 10,
+          "completedAtCreation": [],
+          "trigger": {
+            "eventId": "stock-loss-A",
+            "worldVersion": 2,
+            "changes": [
+              {
+                "field": "available",
+                "before": 12,
+                "now": 0,
+                "reason": "The selected supplier no longer has enough unreserved kits."
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "stock-loss-A",
+          "source": "feed-A",
+          "sequence": 1,
+          "observedAt": 10,
+          "worldVersion": 1,
+          "kind": "stock",
+          "supplierId": "A",
+          "value": 0
+        }
+      ],
+      "receipts": [
+        {
+          "id": "299fe648-82ca-4139-8058-69d487080f2b",
+          "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+          "step": 0,
+          "kind": "reserve",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "1721c1cb-efc1-40ce-aed8-06066fe2ac0b",
+          "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+          "step": 1,
+          "kind": "collect",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "849cfdab-0ec7-41f0-b993-5b7effaa05fd",
+          "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+          "step": 2,
+          "kind": "dispatch",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "c93615a0-98ab-47e9-82c1-526da364be47",
+          "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+          "step": 3,
+          "kind": "confirm",
+          "supplierId": "B",
+          "minute": 100,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+        }
+      ],
+      "trace": [
+        {
+          "payload": {
+            "index": 1,
+            "minute": 0,
+            "type": "run.created",
+            "data": {
+              "scenarioId": "stock-loss",
+              "mode": "adaptive",
+              "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+              "planId": "0b706d16-dce0-41d0-83a3-12a1caa5ce3f",
+              "assumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              }
+            }
+          },
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash": "9d1cffcb7a5330758679163babce648c936141aa63d68032cd33df7c0c54217a"
+        },
+        {
+          "payload": {
+            "index": 2,
+            "minute": 0,
+            "type": "model.requested",
+            "data": {
+              "attemptId": "86b6a3f1-1b2f-48ba-982e-070b7f4a6e33",
+              "reservedTokens": 3000,
+              "worldVersion": 1
+            }
+          },
+          "previous": "9d1cffcb7a5330758679163babce648c936141aa63d68032cd33df7c0c54217a",
+          "hash": "7f3e4d29ecc7a8aa5c1f037fb093328b924bc9a1632f8280b60efff34d07f402"
+        },
+        {
+          "payload": {
+            "index": 3,
+            "minute": 0,
+            "type": "model.returned",
+            "data": {
+              "attemptId": "86b6a3f1-1b2f-48ba-982e-070b7f4a6e33",
+              "model": "deepseek-v4-flash",
+              "usage": {
+                "inputTokens": 452,
+                "outputTokens": 350,
+                "totalTokens": 802,
+                "cacheReadTokens": 0,
+                "cacheCreationTokens": 0
+              },
+              "contextHash": "a74d1855db9d1219a786c82ffd99122bc7bae84d06e80bdde09ab7fd7856b436",
+              "candidate": {
+                "supplierId": "A",
+                "worldVersion": 1,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "steps": [
+                  "reserve",
+                  "collect",
+                  "dispatch",
+                  "confirm"
+                ],
+                "reason": "Atlas Parts (A) is the cheapest feasible supplier: 12 units at 1800 = 21600 + 1200 shipping = 22800 cents, within the 27000 budget, and lead time 60 gives arrival at minute 60, before the 180 deadline. B costs 26400 and C costs 36000 (over budget)."
+              }
+            }
+          },
+          "previous": "7f3e4d29ecc7a8aa5c1f037fb093328b924bc9a1632f8280b60efff34d07f402",
+          "hash": "b3313a8a49a946ea528ada3e0886cf34aa75d276f00af1964caa12b4c246b03a"
+        },
+        {
+          "payload": {
+            "index": 4,
+            "minute": 0,
+            "type": "plan.revised",
+            "data": {
+              "source": "genuine local DeepSeek",
+              "from": "0b706d16-dce0-41d0-83a3-12a1caa5ce3f",
+              "to": "d1c9e5c5-71d5-4ea1-9769-7ec65389a1e5",
+              "oldSupplier": "A",
+              "newSupplier": "A",
+              "oldAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "newAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "changes": [],
+              "reason": "Atlas Parts (A) is the cheapest feasible supplier: 12 units at 1800 = 21600 + 1200 shipping = 22800 cents, within the 27000 budget, and lead time 60 gives arrival at minute 60, before the 180 deadline. B costs 26400 and C costs 36000 (over budget).",
+              "completedEffects": []
+            }
+          },
+          "previous": "b3313a8a49a946ea528ada3e0886cf34aa75d276f00af1964caa12b4c246b03a",
+          "hash": "da3ed2efcd6cbf3a3af13091f8c31663f7c964d137580c9aa63d114670b88614"
+        },
+        {
+          "payload": {
+            "index": 5,
+            "minute": 10,
+            "type": "world.observed",
+            "data": {
+              "event": {
+                "id": "stock-loss-A",
+                "source": "feed-A",
+                "sequence": 1,
+                "observedAt": 10,
+                "worldVersion": 1,
+                "kind": "stock",
+                "supplierId": "A",
+                "value": 0
+              },
+              "worldVersion": 2,
+              "changes": [
+                {
+                  "field": "available",
+                  "before": 12,
+                  "now": 0,
+                  "reason": "The selected supplier no longer has enough unreserved kits."
+                }
+              ]
+            }
+          },
+          "previous": "da3ed2efcd6cbf3a3af13091f8c31663f7c964d137580c9aa63d114670b88614",
+          "hash": "2ccaacb644fa5d43ef4c52717da34139b21f56b5ebc911a4a48640bacc6a705c"
+        },
+        {
+          "payload": {
+            "index": 6,
+            "minute": 10,
+            "type": "plan.invalidated",
+            "data": {
+              "eventId": "stock-loss-A",
+              "worldVersion": 2,
+              "changes": [
+                {
+                  "field": "available",
+                  "before": 12,
+                  "now": 0,
+                  "reason": "The selected supplier no longer has enough unreserved kits."
+                }
+              ]
+            }
+          },
+          "previous": "2ccaacb644fa5d43ef4c52717da34139b21f56b5ebc911a4a48640bacc6a705c",
+          "hash": "48b077581798e33ae90521179a12981f1f47711be3a7a8cfdbd0e4c31a0b3102"
+        },
+        {
+          "payload": {
+            "index": 7,
+            "minute": 10,
+            "type": "model.requested",
+            "data": {
+              "attemptId": "cd3620cd-426f-4447-8947-cae7c8715775",
+              "reservedTokens": 3000,
+              "worldVersion": 2
+            }
+          },
+          "previous": "48b077581798e33ae90521179a12981f1f47711be3a7a8cfdbd0e4c31a0b3102",
+          "hash": "bb8b7a8049a0eba1e59b8060fa90d9261b779916977cc81f5d28969459bbee2d"
+        },
+        {
+          "payload": {
+            "index": 8,
+            "minute": 10,
+            "type": "model.returned",
+            "data": {
+              "attemptId": "cd3620cd-426f-4447-8947-cae7c8715775",
+              "model": "deepseek-v4-flash",
+              "usage": {
+                "inputTokens": 452,
+                "outputTokens": 350,
+                "totalTokens": 802,
+                "cacheReadTokens": 0,
+                "cacheCreationTokens": 0
+              },
+              "contextHash": "9216520506c9a21b183d17fd17279aa344c16b66b6dd2f07385e86c9eb380428",
+              "candidate": {
+                "supplierId": "B",
+                "worldVersion": 2,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "steps": [
+                  "reserve",
+                  "collect",
+                  "dispatch",
+                  "confirm"
+                ],
+                "reason": "Supplier B is the cheapest supplier with enough stock (12 units available): 12×2100 + 1200 shipping = 26400 cents, within the 27000 budget, and lead time 90 minutes arrives at minute 100, before the deadline of 180. Supplier A has 0 available and Supplier C costs 36000+1200, over budget."
+              }
+            }
+          },
+          "previous": "bb8b7a8049a0eba1e59b8060fa90d9261b779916977cc81f5d28969459bbee2d",
+          "hash": "7c01c2ccd7ab4f08d0084a4061ffa87de8466ca32e49670bb4e1701ca14e56d6"
+        },
+        {
+          "payload": {
+            "index": 9,
+            "minute": 10,
+            "type": "plan.revised",
+            "data": {
+              "source": "genuine local DeepSeek",
+              "from": "d1c9e5c5-71d5-4ea1-9769-7ec65389a1e5",
+              "to": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+              "oldSupplier": "A",
+              "newSupplier": "B",
+              "oldAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "newAssumptions": {
+                "supplierId": "B",
+                "totalCents": 26400,
+                "arrivalMinute": 100,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "changes": [
+                {
+                  "field": "available",
+                  "before": 12,
+                  "now": 0,
+                  "reason": "The selected supplier no longer has enough unreserved kits."
+                }
+              ],
+              "reason": "Supplier B is the cheapest supplier with enough stock (12 units available): 12×2100 + 1200 shipping = 26400 cents, within the 27000 budget, and lead time 90 minutes arrives at minute 100, before the deadline of 180. Supplier A has 0 available and Supplier C costs 36000+1200, over budget.",
+              "completedEffects": []
+            }
+          },
+          "previous": "7c01c2ccd7ab4f08d0084a4061ffa87de8466ca32e49670bb4e1701ca14e56d6",
+          "hash": "73b3863495376518f4fb312775ab67077b255dd0e237bc4d5e15268693b0a0d2"
+        },
+        {
+          "payload": {
+            "index": 10,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "299fe648-82ca-4139-8058-69d487080f2b",
+                "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+                "step": 0,
+                "kind": "reserve",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 0,
+              "heldCents": 26400,
+              "delivered": 0
+            }
+          },
+          "previous": "73b3863495376518f4fb312775ab67077b255dd0e237bc4d5e15268693b0a0d2",
+          "hash": "a22dd5fee2eee8df5c13fba93681d7f49add1d194c2f9191a241c2669cb5a539"
+        },
+        {
+          "payload": {
+            "index": 11,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "1721c1cb-efc1-40ce-aed8-06066fe2ac0b",
+                "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+                "step": 1,
+                "kind": "collect",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 0,
+              "heldCents": 26400,
+              "delivered": 0
+            }
+          },
+          "previous": "a22dd5fee2eee8df5c13fba93681d7f49add1d194c2f9191a241c2669cb5a539",
+          "hash": "91c4565e8387fd8a2e3439b23220dc244b6b9135effae1fb3d7b684763376092"
+        },
+        {
+          "payload": {
+            "index": 12,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "849cfdab-0ec7-41f0-b993-5b7effaa05fd",
+                "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+                "step": 2,
+                "kind": "dispatch",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 26400,
+              "heldCents": 0,
+              "delivered": 0
+            }
+          },
+          "previous": "91c4565e8387fd8a2e3439b23220dc244b6b9135effae1fb3d7b684763376092",
+          "hash": "7cfdf61c05c0c7ea980ffec136693fbfe0af2906b61bc92e68d01751772aa0e2"
+        },
+        {
+          "payload": {
+            "index": 13,
+            "minute": 100,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "c93615a0-98ab-47e9-82c1-526da364be47",
+                "planId": "92072462-b751-4e05-87e9-9f0bce1b0f7c",
+                "step": 3,
+                "kind": "confirm",
+                "supplierId": "B",
+                "minute": 100,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 26400,
+              "heldCents": 0,
+              "delivered": 12
+            }
+          },
+          "previous": "7cfdf61c05c0c7ea980ffec136693fbfe0af2906b61bc92e68d01751772aa0e2",
+          "hash": "63c1a4da4f89ec08d036d998cd8d9efee99399a929f4ff0bc48c77c901d75460"
+        }
+      ],
+      "scope": "Real local AI planning; synthetic persistent fulfillment effects. No automatic execution."
+    },
+    {
+      "scenarioId": "eta-delay",
+      "verifiedAt": "2026-10-14T15:24:26.520Z",
+      "goal": {
+        "id": "repair-kits",
+        "quantity": 12,
+        "budgetCents": 27000,
+        "deadlineMinute": 180
+      },
+      "model": "deepseek-v4-flash",
+      "attempts": [
+        {
+          "id": "a258c3e5-6eff-4dff-b55a-1792b26a03dc",
+          "model": "deepseek-v4-flash",
+          "status": "accepted",
+          "contextHash": "a74d1855db9d1219a786c82ffd99122bc7bae84d06e80bdde09ab7fd7856b436",
+          "candidate": {
+            "supplierId": "A",
+            "worldVersion": 1,
+            "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+            "steps": [
+              "reserve",
+              "collect",
+              "dispatch",
+              "confirm"
+            ],
+            "reason": "Supplier A is cheapest: 12 x 1800 = 21600 cents + 1200 shipping = 22800, under the 27000 budget; 12 units available and 60-minute lead time arrives at minute 60, before the 180-minute deadline."
+          },
+          "usage": {
+            "inputTokens": 452,
+            "outputTokens": 322,
+            "totalTokens": 774,
+            "cacheReadTokens": 0,
+            "cacheCreationTokens": 0
+          }
+        },
+        {
+          "id": "8a4a5347-bb78-460b-936d-868d9d1546f3",
+          "model": "deepseek-v4-flash",
+          "status": "accepted",
+          "contextHash": "76784cdb43b26db6824ac947558e206091a074da77de28a0687670ee59679e95",
+          "candidate": {
+            "supplierId": "B",
+            "worldVersion": 3,
+            "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+            "steps": [
+              "cancel",
+              "reserve",
+              "collect",
+              "dispatch",
+              "confirm"
+            ],
+            "reason": "Supplier A has 0 available (and 210-minute lead), Supplier C costs 12*3000+1200=37200 cents, exceeding the 27000 budget; Supplier B is the cheapest viable option at 12*2100+1200=26400 cents, arriving at minute 10+90=100, within the minute-180 deadline."
+          },
+          "usage": {
+            "inputTokens": 508,
+            "outputTokens": 477,
+            "totalTokens": 985,
+            "cacheReadTokens": 0,
+            "cacheCreationTokens": 0
+          }
+        }
+      ],
+      "metrics": {
+        "mode": "adaptive",
+        "status": "completed",
+        "goalAchieved": true,
+        "delivered": 12,
+        "spendCents": 26400,
+        "heldCents": 0,
+        "arrivalMinute": 100,
+        "originalForecast": 60,
+        "currentRouteForecast": 100,
+        "revisions": 2,
+        "compensations": 1,
+        "planningCalls": 2,
+        "constraintViolations": 0,
+        "auditValid": true
+      },
+      "plans": [
+        {
+          "id": "fcb5969c-797d-43e8-9b9b-30dc9c24f3f8",
+          "version": 1,
+          "parentId": null,
+          "supplierId": "A",
+          "worldVersion": 1,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Initial plan: Atlas meets the quantity, budget and delivery deadline.",
+          "assumptions": {
+            "supplierId": "A",
+            "totalCents": 22800,
+            "arrivalMinute": 60,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 0,
+          "completedAtCreation": [],
+          "trigger": null
+        },
+        {
+          "id": "5814527c-3732-4fd7-8eba-55cdd3386668",
+          "version": 2,
+          "parentId": "fcb5969c-797d-43e8-9b9b-30dc9c24f3f8",
+          "supplierId": "A",
+          "worldVersion": 1,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Supplier A is cheapest: 12 x 1800 = 21600 cents + 1200 shipping = 22800, under the 27000 budget; 12 units available and 60-minute lead time arrives at minute 60, before the 180-minute deadline.",
+          "assumptions": {
+            "supplierId": "A",
+            "totalCents": 22800,
+            "arrivalMinute": 60,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 0,
+          "completedAtCreation": [],
+          "trigger": null
+        },
+        {
+          "id": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "version": 3,
+          "parentId": "5814527c-3732-4fd7-8eba-55cdd3386668",
+          "supplierId": "B",
+          "worldVersion": 3,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "steps": [
+            "cancel",
+            "reserve",
+            "collect",
+            "dispatch",
+            "confirm"
+          ],
+          "reason": "Supplier A has 0 available (and 210-minute lead), Supplier C costs 12*3000+1200=37200 cents, exceeding the 27000 budget; Supplier B is the cheapest viable option at 12*2100+1200=26400 cents, arriving at minute 10+90=100, within the minute-180 deadline.",
+          "assumptions": {
+            "supplierId": "B",
+            "totalCents": 26400,
+            "arrivalMinute": 100,
+            "available": 12,
+            "ownedReservation": false,
+            "collected": false,
+            "dispatched": false
+          },
+          "createdMinute": 10,
+          "completedAtCreation": [
+            "f0c1e2ec-1b0e-4616-a8bd-bd75be626c0f"
+          ],
+          "trigger": {
+            "eventId": "eta-delay-A",
+            "worldVersion": 3,
+            "changes": [
+              {
+                "field": "arrivalMinute",
+                "before": 60,
+                "now": 220,
+                "reason": "The selected route misses the unchanged delivery deadline."
+              }
+            ]
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "eta-delay-A",
+          "source": "feed-A",
+          "sequence": 1,
+          "observedAt": 10,
+          "worldVersion": 2,
+          "kind": "eta",
+          "supplierId": "A",
+          "value": 210
+        }
+      ],
+      "receipts": [
+        {
+          "id": "f0c1e2ec-1b0e-4616-a8bd-bd75be626c0f",
+          "planId": "5814527c-3732-4fd7-8eba-55cdd3386668",
+          "step": 0,
+          "kind": "reserve",
+          "supplierId": "A",
+          "minute": 5,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Atlas Parts in the synthetic fulfillment store."
+        },
+        {
+          "id": "ac54e45a-98b9-49d7-8e26-b02b1acf77d3",
+          "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "step": 0,
+          "kind": "cancel",
+          "supplierId": null,
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "Released the prior synthetic reservation; its receipt remains."
+        },
+        {
+          "id": "8579e88c-4b1d-442a-b21c-256dcf4a4a07",
+          "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "step": 1,
+          "kind": "reserve",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "9b07efbf-e1b9-4379-acdf-e611cd1be448",
+          "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "step": 2,
+          "kind": "collect",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "f92bbbba-5783-401c-b377-2717e5140fe9",
+          "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "step": 3,
+          "kind": "dispatch",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "d5da533d-3167-45a8-961c-72dff74b708d",
+          "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+          "step": 4,
+          "kind": "confirm",
+          "supplierId": "B",
+          "minute": 100,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+        }
+      ],
+      "trace": [
+        {
+          "payload": {
+            "index": 1,
+            "minute": 0,
+            "type": "run.created",
+            "data": {
+              "scenarioId": "eta-delay",
+              "mode": "adaptive",
+              "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+              "planId": "fcb5969c-797d-43e8-9b9b-30dc9c24f3f8",
+              "assumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              }
+            }
+          },
+          "previous": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash": "c3d112a9b8107a5ec74da949409280145fe383a0f2d9190bf4eab45edbac77d5"
+        },
+        {
+          "payload": {
+            "index": 2,
+            "minute": 0,
+            "type": "model.requested",
+            "data": {
+              "attemptId": "a258c3e5-6eff-4dff-b55a-1792b26a03dc",
+              "reservedTokens": 3000,
+              "worldVersion": 1
+            }
+          },
+          "previous": "c3d112a9b8107a5ec74da949409280145fe383a0f2d9190bf4eab45edbac77d5",
+          "hash": "ca4127fb3438b7253eeceb948ac8336f988f32dea20b3cc29f4d63a6ed86b1da"
+        },
+        {
+          "payload": {
+            "index": 3,
+            "minute": 0,
+            "type": "model.returned",
+            "data": {
+              "attemptId": "a258c3e5-6eff-4dff-b55a-1792b26a03dc",
+              "model": "deepseek-v4-flash",
+              "usage": {
+                "inputTokens": 452,
+                "outputTokens": 322,
+                "totalTokens": 774,
+                "cacheReadTokens": 0,
+                "cacheCreationTokens": 0
+              },
+              "contextHash": "a74d1855db9d1219a786c82ffd99122bc7bae84d06e80bdde09ab7fd7856b436",
+              "candidate": {
+                "supplierId": "A",
+                "worldVersion": 1,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "steps": [
+                  "reserve",
+                  "collect",
+                  "dispatch",
+                  "confirm"
+                ],
+                "reason": "Supplier A is cheapest: 12 x 1800 = 21600 cents + 1200 shipping = 22800, under the 27000 budget; 12 units available and 60-minute lead time arrives at minute 60, before the 180-minute deadline."
+              }
+            }
+          },
+          "previous": "ca4127fb3438b7253eeceb948ac8336f988f32dea20b3cc29f4d63a6ed86b1da",
+          "hash": "bfc9da12e9bbbea603fc88d2d9f13a717760599f1e390ce3c2f74333c66d4cce"
+        },
+        {
+          "payload": {
+            "index": 4,
+            "minute": 0,
+            "type": "plan.revised",
+            "data": {
+              "source": "genuine local DeepSeek",
+              "from": "fcb5969c-797d-43e8-9b9b-30dc9c24f3f8",
+              "to": "5814527c-3732-4fd7-8eba-55cdd3386668",
+              "oldSupplier": "A",
+              "newSupplier": "A",
+              "oldAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "newAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "changes": [],
+              "reason": "Supplier A is cheapest: 12 x 1800 = 21600 cents + 1200 shipping = 22800, under the 27000 budget; 12 units available and 60-minute lead time arrives at minute 60, before the 180-minute deadline.",
+              "completedEffects": []
+            }
+          },
+          "previous": "bfc9da12e9bbbea603fc88d2d9f13a717760599f1e390ce3c2f74333c66d4cce",
+          "hash": "788cca78f47bce37befaf5c51b8c509d16f74b99a67a09c475affbe25c91a6fe"
+        },
+        {
+          "payload": {
+            "index": 5,
+            "minute": 5,
+            "type": "clock.advanced",
+            "data": {
+              "minute": 5
+            }
+          },
+          "previous": "788cca78f47bce37befaf5c51b8c509d16f74b99a67a09c475affbe25c91a6fe",
+          "hash": "9fa7265fb90c15c0793409df630a7e94ff1866af7a64f41a58d5b95ba2ac867b"
+        },
+        {
+          "payload": {
+            "index": 6,
+            "minute": 5,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "f0c1e2ec-1b0e-4616-a8bd-bd75be626c0f",
+                "planId": "5814527c-3732-4fd7-8eba-55cdd3386668",
+                "step": 0,
+                "kind": "reserve",
+                "supplierId": "A",
+                "minute": 5,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "reserve applied for Atlas Parts in the synthetic fulfillment store."
+              },
+              "spendCents": 0,
+              "heldCents": 22800,
+              "delivered": 0
+            }
+          },
+          "previous": "9fa7265fb90c15c0793409df630a7e94ff1866af7a64f41a58d5b95ba2ac867b",
+          "hash": "80207ea3ea1d86239c0ca352f41188aa4e44d5623520dd985acfd68610e1ae83"
+        },
+        {
+          "payload": {
+            "index": 7,
+            "minute": 10,
+            "type": "world.observed",
+            "data": {
+              "event": {
+                "id": "eta-delay-A",
+                "source": "feed-A",
+                "sequence": 1,
+                "observedAt": 10,
+                "worldVersion": 2,
+                "kind": "eta",
+                "supplierId": "A",
+                "value": 210
+              },
+              "worldVersion": 3,
+              "changes": [
+                {
+                  "field": "arrivalMinute",
+                  "before": 60,
+                  "now": 220,
+                  "reason": "The selected route misses the unchanged delivery deadline."
+                }
+              ]
+            }
+          },
+          "previous": "80207ea3ea1d86239c0ca352f41188aa4e44d5623520dd985acfd68610e1ae83",
+          "hash": "32e74b1745678e69d5e6d9694c8b50490914cbeea73eeed0b2a17ceb78b4f573"
+        },
+        {
+          "payload": {
+            "index": 8,
+            "minute": 10,
+            "type": "plan.invalidated",
+            "data": {
+              "eventId": "eta-delay-A",
+              "worldVersion": 3,
+              "changes": [
+                {
+                  "field": "arrivalMinute",
+                  "before": 60,
+                  "now": 220,
+                  "reason": "The selected route misses the unchanged delivery deadline."
+                }
+              ]
+            }
+          },
+          "previous": "32e74b1745678e69d5e6d9694c8b50490914cbeea73eeed0b2a17ceb78b4f573",
+          "hash": "6c0b8f1e14e7ce5f38b8e53b4061e10d98d7d41cb70b10dbda922d8c7466f8b9"
+        },
+        {
+          "payload": {
+            "index": 9,
+            "minute": 10,
+            "type": "model.requested",
+            "data": {
+              "attemptId": "8a4a5347-bb78-460b-936d-868d9d1546f3",
+              "reservedTokens": 3000,
+              "worldVersion": 3
+            }
+          },
+          "previous": "6c0b8f1e14e7ce5f38b8e53b4061e10d98d7d41cb70b10dbda922d8c7466f8b9",
+          "hash": "e136250406cafd03664cdd3a1d95412b0025d705a6b3e7a842d24ba38d588f00"
+        },
+        {
+          "payload": {
+            "index": 10,
+            "minute": 10,
+            "type": "model.returned",
+            "data": {
+              "attemptId": "8a4a5347-bb78-460b-936d-868d9d1546f3",
+              "model": "deepseek-v4-flash",
+              "usage": {
+                "inputTokens": 508,
+                "outputTokens": 477,
+                "totalTokens": 985,
+                "cacheReadTokens": 0,
+                "cacheCreationTokens": 0
+              },
+              "contextHash": "76784cdb43b26db6824ac947558e206091a074da77de28a0687670ee59679e95",
+              "candidate": {
+                "supplierId": "B",
+                "worldVersion": 3,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "steps": [
+                  "cancel",
+                  "reserve",
+                  "collect",
+                  "dispatch",
+                  "confirm"
+                ],
+                "reason": "Supplier A has 0 available (and 210-minute lead), Supplier C costs 12*3000+1200=37200 cents, exceeding the 27000 budget; Supplier B is the cheapest viable option at 12*2100+1200=26400 cents, arriving at minute 10+90=100, within the minute-180 deadline."
+              }
+            }
+          },
+          "previous": "e136250406cafd03664cdd3a1d95412b0025d705a6b3e7a842d24ba38d588f00",
+          "hash": "cafccbd733063ea892a21294cd29aee5d10f8f23663cd2bd036c9ccc5cf1fa20"
+        },
+        {
+          "payload": {
+            "index": 11,
+            "minute": 10,
+            "type": "plan.revised",
+            "data": {
+              "source": "genuine local DeepSeek",
+              "from": "5814527c-3732-4fd7-8eba-55cdd3386668",
+              "to": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+              "oldSupplier": "A",
+              "newSupplier": "B",
+              "oldAssumptions": {
+                "supplierId": "A",
+                "totalCents": 22800,
+                "arrivalMinute": 60,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "newAssumptions": {
+                "supplierId": "B",
+                "totalCents": 26400,
+                "arrivalMinute": 100,
+                "available": 12,
+                "ownedReservation": false,
+                "collected": false,
+                "dispatched": false
+              },
+              "changes": [
+                {
+                  "field": "arrivalMinute",
+                  "before": 60,
+                  "now": 220,
+                  "reason": "The selected route misses the unchanged delivery deadline."
+                }
+              ],
+              "reason": "Supplier A has 0 available (and 210-minute lead), Supplier C costs 12*3000+1200=37200 cents, exceeding the 27000 budget; Supplier B is the cheapest viable option at 12*2100+1200=26400 cents, arriving at minute 10+90=100, within the minute-180 deadline.",
+              "completedEffects": [
+                "f0c1e2ec-1b0e-4616-a8bd-bd75be626c0f"
+              ]
+            }
+          },
+          "previous": "cafccbd733063ea892a21294cd29aee5d10f8f23663cd2bd036c9ccc5cf1fa20",
+          "hash": "a2a61104ee08893e6f36558649c16766d992e04411431d314549ecc43dd15677"
+        },
+        {
+          "payload": {
+            "index": 12,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "ac54e45a-98b9-49d7-8e26-b02b1acf77d3",
+                "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+                "step": 0,
+                "kind": "cancel",
+                "supplierId": null,
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "Released the prior synthetic reservation; its receipt remains."
+              },
+              "spendCents": 0,
+              "heldCents": 0,
+              "delivered": 0
+            }
+          },
+          "previous": "a2a61104ee08893e6f36558649c16766d992e04411431d314549ecc43dd15677",
+          "hash": "b64bf6b1343222a6b3bdadd78b01e833dbab40e519ec60de68607a35de3bf0fb"
+        },
+        {
+          "payload": {
+            "index": 13,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "8579e88c-4b1d-442a-b21c-256dcf4a4a07",
+                "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+                "step": 1,
+                "kind": "reserve",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 0,
+              "heldCents": 26400,
+              "delivered": 0
+            }
+          },
+          "previous": "b64bf6b1343222a6b3bdadd78b01e833dbab40e519ec60de68607a35de3bf0fb",
+          "hash": "43ae87b344dbcfe27664fc1a72f2f38b051bfc1d36b51c8ac7f7e27d62ceee50"
+        },
+        {
+          "payload": {
+            "index": 14,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "9b07efbf-e1b9-4379-acdf-e611cd1be448",
+                "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+                "step": 2,
+                "kind": "collect",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 0,
+              "heldCents": 26400,
+              "delivered": 0
+            }
+          },
+          "previous": "43ae87b344dbcfe27664fc1a72f2f38b051bfc1d36b51c8ac7f7e27d62ceee50",
+          "hash": "714be7fa87cf015a827afa4acf6cb35228cbd12339f14163c83e511183c8c3e7"
+        },
+        {
+          "payload": {
+            "index": 15,
+            "minute": 10,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "f92bbbba-5783-401c-b377-2717e5140fe9",
+                "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+                "step": 3,
+                "kind": "dispatch",
+                "supplierId": "B",
+                "minute": 10,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 26400,
+              "heldCents": 0,
+              "delivered": 0
+            }
+          },
+          "previous": "714be7fa87cf015a827afa4acf6cb35228cbd12339f14163c83e511183c8c3e7",
+          "hash": "5e27a647f40b4ca0496fa9f189a4902cde5cdb7df1789b813080e3f851cc8c04"
+        },
+        {
+          "payload": {
+            "index": 16,
+            "minute": 100,
+            "type": "step.applied",
+            "data": {
+              "receipt": {
+                "id": "d5da533d-3167-45a8-961c-72dff74b708d",
+                "planId": "32d92a8b-cf1f-4f73-855c-7ef03a8c3dff",
+                "step": 4,
+                "kind": "confirm",
+                "supplierId": "B",
+                "minute": 100,
+                "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+                "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+              },
+              "spendCents": 26400,
+              "heldCents": 0,
+              "delivered": 12
+            }
+          },
+          "previous": "5e27a647f40b4ca0496fa9f189a4902cde5cdb7df1789b813080e3f851cc8c04",
+          "hash": "327285bf6df966d6626f9c6ab3dd227b9e7293c2a1c043f68c9715af37c9330d"
+        }
+      ],
+      "scope": "Real local AI planning; synthetic persistent fulfillment effects. No automatic execution."
+    }
+  ]
+}

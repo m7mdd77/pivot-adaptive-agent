@@ -1,0 +1,1 @@
+export function runFrozenPlan(store,sessionId,runId,maxSteps=10){let run=store.read(sessionId,runId);for(let i=0;i<maxSteps&&!['completed','paused','failed'].includes(run.status);i++)run=store.advance(sessionId,runId).state;return run;}

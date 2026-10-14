@@ -1,0 +1,15 @@
+{
+  "name": "pivot-adaptive-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check-syntax.mjs && node scripts/check-fixtures.mjs && node --test test/*.test.js",
+    "compare": "node scripts/compare.mjs"
+  }
+}
