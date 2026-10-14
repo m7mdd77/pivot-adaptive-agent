@@ -8,4 +8,8 @@
 - Browser verified stock-loss and ETA-delay flows. The ETA run showed retained original receipt, explicit cancellation and replacement. Responsive/failure browser evidence is recorded in the handoff after checks finish.
 - TypeScript check, locked hosted dependency install, Drizzle migration generation, Worker build and local migration application passed. The supplied installer hit a Windows npm wrapper lookup error; invoking the installed npm CLI directly completed the same locked installation.
 
-No public Site or source repository has been published for Pivot. No new DOO entry has been submitted. Continuous recording, release publication and final anonymous public verification remain separate gates.
+- Actual continuous user-selected tab recording recovered and transcoded to `public/walkthrough.mp4`: 90.70 seconds, H.264, 584×672, 20 fps, no audio. Full decoding passed; sampled frames showed only Pivot, including the completed 12-kit/$264/minute-100 result and the $372 refusal with zero effects. No provider calls occurred during this capture; genuine AI evidence is separate. See `recording-verification.md`.
+- Browser playback independently confirmed duration 90.7 and no media error. Keyboard Enter expanded and collapsed the adaptive durable trace. Reload restored the actual saved scenario and retained the refused run's receipts/status.
+- After packaging the video, all 36 tests and the hosted build passed again. Source-boundary scan checked 186 files with zero matches for the configured provider key and no private runtime paths.
+
+No public Site or source repository has been published for Pivot. No new DOO entry has been submitted. Release publication and final anonymous public verification remain separate gates.

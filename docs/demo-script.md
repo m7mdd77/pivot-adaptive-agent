@@ -1,6 +1,6 @@
 # Continuous 90-second walkthrough
 
-Use the actual app at http://127.0.0.1:3261. Open `/record.html` and select only the Pivot tab in the browser sharing picker. It captures actual screen changes, no audio; final duration and decoding must still be verified. Capture has not yet been performed simply because this script exists.
+The actual capture is now `public/walkthrough.mp4`, verified at 90.70 seconds with successful full decoding. See `recording-verification.md` for the captured sequence and limitations. The timing below is the planning script; the recorded timing differs. For another capture, use the actual app at http://127.0.0.1:3261, open `/record.html` and select only the Pivot tab in the browser sharing picker.
 
 | Time | Show |
 |---|---|
