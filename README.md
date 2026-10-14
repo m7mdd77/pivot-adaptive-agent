@@ -2,6 +2,12 @@
 
 Mission: https://build.doo.ooo/challenges/adaptive-agent
 
+Public demo: https://pivot-adaptive-agent.choggyacc.chatgpt.site
+
+Source repository: https://github.com/m7mdd77/pivot-adaptive-agent
+
+Walkthrough: https://pivot-adaptive-agent.choggyacc.chatgpt.site/walkthrough.mp4
+
 Pivot detects invalidated stock or delivery assumptions and revises a multi-step fulfillment plan without changing its quantity, budget or deadline. Both adaptive and frozen-plan runs use identical initial state, events and action checks. Effects are persistent synthetic inventory/reservation/dispatch records, not real orders or payments.
 
 ## Run a clean checkout
@@ -34,12 +40,14 @@ Application allowances are 6 attempts/run, 3000 reserved tokens/attempt, 20 atte
 - `docs/architecture.md`, `docs/failure-test.md`, `docs/ai-usage.md`, `docs/thesis.md` and `docs/mission-map.md` explain the system and limits.
 - `plan/feature-adaptive-agent-1.md` tracks the roadmap. `roadmap.html` is the original planning board, not the product dashboard.
 
-## Hosted staging and release status
+## Hosted source and release status
 
-`hosted-site/` preserves the current Sites Vinext starter and `sites()` integration, declaring D1 as `DB`. It has built successfully and passed actual local Worker/D1 runtime checks. Its paid model endpoint is disabled. Shared pure modules and a D1 revision comparison serialize effects. It has not been registered, published or submitted to DOO.
+`hosted-site/` preserves the current Sites Vinext starter and `sites()` integration, declaring D1 as `DB`. It has built successfully and passed actual local Worker/D1 runtime checks. Its paid model endpoint is disabled. Shared pure modules and a D1 revision comparison serialize effects. The Pivot Site is registered and publicly deployed. Competition submission is a separate authorized step.
 
-Inside `hosted-site/`, run `npm ci`, `npm run build`, apply `drizzle/0000_yummy_loners.sql` once with Wrangler's local D1 command from the staging README, then `npm start -- --port 3262`. For a new public release, follow the current Sites workflow with a new Pivot Site identity. Preserve applied migrations. Do not copy either prior project's Site ID.
+Inside `hosted-site/`, run `npm ci`, `npm run build`, apply `drizzle/0000_yummy_loners.sql` once with Wrangler's local D1 command from the staging README, then `npm start -- --port 3262`. For updates, follow the current Sites workflow with the retained Pivot Site identity. Preserve applied migrations. Do not copy either prior project's Site ID.
 
 The actual continuous walkthrough is at `/walkthrough.mp4` (90.70 seconds, H.264, 584×672, no audio). It was captured from the user-selected Pivot tab on October 14, 2026, then transcoded without cuts. Full decoding and sampled frames verified the stock-loss completion and over-budget refusal. The controls in this recording use the deterministic planner; the genuine DeepSeek evidence was collected separately before capture. See `docs/recording-verification.md`. The local recorder remains at `/record.html` for future captures.
 
 Limits: synthetic supplier sources and effects; no external fulfillment connectors; local demonstration operator; deterministic forecasts without calibrated uncertainty; no external audit anchor. A supplier ETA event affects the unshipped route; post-dispatch external telemetry is outside this version. The frozen-plan baseline is safely blocked when it cannot meet the goal, not allowed to fabricate delivery.
+
+Hosted storage caps a serialized session at 1.5 MB and expires sessions after seven days. New-session creation reclaims bounded batches of expired state and counters. Oversized mutations are refused before persistence. All 38 automated tests pass.

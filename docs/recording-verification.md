@@ -6,6 +6,6 @@ The user selected the Pivot demo tab in the browser's sharing picker. The local 
 
 The capture begins with the fixed mission. It shows preparation and stock-loss controls, the frozen control's safe pause, the adaptive completed result (12 kits, $264, minute 100, Supplier B, one revision), then a second comparison whose $372 replacement is refused under the unchanged $270 cap with zero effects. Sampled frames around the completed result and final refusal were visually inspected. The narrow viewport stacks the agents vertically; some intermediate changes occur below the visible fold. Inspect the live trace/export for detailed plan and receipt history.
 
-This is a real UI recording of deterministic scenario execution. The four genuine DeepSeek calls were completed before capture and are documented separately in `public/verified-ai-runs.json`; the video does not imply live provider inference. Publication and competition submission have not occurred.
+This is a real UI recording of deterministic scenario execution. The four genuine DeepSeek calls were completed before capture and are documented separately in `public/verified-ai-runs.json`; the video does not imply live provider inference. Public publication is documented in `release.md`; competition submission has not occurred.
 
 Browser playback independently reported duration 90.7, decoded dimensions 584×672, readyState 4 and no media error. MP4 SHA-256: `2045a34cd1ee911ca07c5244f4d42d2a8b33c57413628e2fd05f2aaf1484bd54`.

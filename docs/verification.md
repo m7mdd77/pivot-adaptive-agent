@@ -12,4 +12,6 @@
 - Browser playback independently confirmed duration 90.7 and no media error. Keyboard Enter expanded and collapsed the adaptive durable trace. Reload restored the actual saved scenario and retained the refused run's receipts/status.
 - After packaging the video, all 36 tests and the hosted build passed again. Source-boundary scan checked 186 files with zero matches for the configured provider key and no private runtime paths.
 
-No public Site or source repository has been published for Pivot. No new DOO entry has been submitted. Release publication and final anonymous public verification remain separate gates.
+The public Pivot Site is deployed at https://pivot-adaptive-agent.choggyacc.chatgpt.site. Anonymous HTTP verification passed 101 runtime checks with zero paid model calls. Public walkthrough bytes match the reviewed MP4 SHA-256 exactly. The reviewed project source is published at https://github.com/m7mdd77/pivot-adaptive-agent. No new DOO entry has been submitted.
+
+Public-release preparation added bounded expired-row reclamation and a 1.5 MB serialized sandbox cap. Both have rollback/isolation tests; all 38 tests pass. The initial archived build contained 36 tests before these two hosted-storage checks were added.
