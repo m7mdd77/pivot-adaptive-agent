@@ -1,3 +1,5 @@
+AI tools: OpenAI Codex for implementation and review; DeepSeek v4 Flash for live planning.
+
 Pivot detects a broken assumption, revises its plan and keeps the same promise: 12 repair kits, a $270 cap and delivery by minute 180. Stock loss and ETA delay cause explicit A→B revisions. The ETA case preserves the original receipt and cancels the old reservation before replacing it. The frozen control receives identical events and safety checks; it retains its plan and is safely blocked.
 
 An injected $372 candidate is refused without effects. Goal, authority, stale context, duplicate receipts, revision/attempt limits and operator pause are enforced independently of model proposals. SQLite locally and D1 publicly persist plans, observations and receipts. Hosted sessions have bounded state and expired-row reclamation.

@@ -1,6 +1,6 @@
 # Pivot mission and evidence map
 
-Mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent), read in the signed-in browser on October 14, 2026. Goal: notice changed reality and safely revise a multi-step plan. Existing Threshold and Relay Trust submissions are separate.
+Mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent), rechecked in the live browser on October 15, 2026. Goal: notice changed reality and safely revise a multi-step plan. Existing Threshold and Relay Trust submissions are separate.
 
 | Criterion | Working evidence | Release requirement |
 |---|---|---|
@@ -9,8 +9,8 @@ Mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent), 
 | Explain every change of mind | Revision records bind triggering event, changed facts, old/new plan, prior effects and reason | Browser revision diff |
 | Two original plans that would fail | Stock loss and ETA delay, same event stream and common safe action gateway | Side-by-side comparison report |
 | Contain failed adaptation | Injected expensive replacement is refused; no corresponding effects | Recorded failure run |
-| Actual AI | Two genuine DeepSeek proposals per scenario; four calls, 3363 reported tokens | Sanitized recorded evidence and explicit live/replay labels |
-| Public repository/live demo | Local source and hosted preview are being prepared | Exact pushed commit and anonymous published URL |
+| Actual AI | Four genuine local calls (3363 reported tokens), two public scenario calls (1435 reported tokens), and one live browser call (1126 reported tokens) | Public live planner plus sanitized evidence; video scope disclosed |
+| Public repository/live demo | Public GitHub source and anonymous Sites demo are published | Clean archive passed 50 tests; public runtime passed 101 assertions |
 | 90-second walkthrough | Actual continuous capture, `public/walkthrough.mp4`, 90.70 seconds; full decoding and sampled frames checked | Publish the reviewed MP4 with explicit deterministic/recorded-AI scope |
 | Architecture + <=300-word thesis | `docs/architecture.md`, `docs/thesis.md` | Public links in entry notes |
 

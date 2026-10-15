@@ -2,15 +2,15 @@
 goal: Build Pivot, an event-driven fulfillment agent that revises plans without expanding its authority
 version: 1.0
 date_created: 2026-10-14
-last_updated: 2026-10-14
+last_updated: 2026-10-15
 owner: Mohammed and Codex
-status: In progress
+status: Ready for submission review
 tags: [feature, adaptive-agent, planning, evidence, submission]
 ---
 
 # Introduction
 
-![Status: In progress](https://img.shields.io/badge/status-In_progress-yellow)
+Status: Build and public release complete; competition entry awaits authorization.
 
 Chosen mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent). Official requirements and rubric were read in the signed-in browser on October 14, 2026. This is a new project, separate from submitted Threshold and Relay Trust. The local application, genuine AI verification, comparison tests and locally tested hosted staging now exist. The continuous walkthrough is recorded and verified. The public Site is deployed and has passed 101 runtime checks; The reviewed GitHub source is published. Competition submission remains pending.
 
@@ -108,7 +108,9 @@ The quality method is: define the falsifiable outcome, implement the smallest fu
 | TASK-018 | Implement `hosted/worker.js` and `hosted/store.js` with D1-backed bounded sessions and compare-and-swap writes using the shared pure contracts, assumptions and policy. Use the current Sites skill/starter workflow at build time. Test local/hosted semantic parity, quotas, retention, session isolation and concurrent effects. Hosted scenarios and any recorded model proposals must be explicitly labeled. | Yes | 2026-10-14 |
 | TASK-019 | Write `README.md`, `.env.example`, `docs/architecture.md`, `docs/thesis.md` (<=300 words), `docs/failure-test.md` and `docs/ai-usage.md`. Scan current files, history and evidence for secrets/private runtime paths before proposing public publication. | Yes | 2026-10-14 |
 | TASK-020 | Prepare a continuous 90-second actual UI recording: 0-15s goal/initial plan; 15-35s stock event; 35-55s revision diff and baseline divergence; 55-75s over-budget revision contained; 75-90s persisted receipt/limits. If model requests are executed before capture, disclose cached proposals. Require recovered MP4, decoded frames and verified duration. A continuous user-selected tab capture was recovered as H.264 MP4 (90.70 seconds, 584×672); full decoding and sampled success/failure frames were checked. | Yes | 2026-10-14 |
-| TASK-021 | After publication authorization, publish a sanitized public repository and Sites demo, verify anonymous links and exact commits, then prepare notes <=2000 characters with architecture/thesis/evidence links. Submit only after explicit submission authorization and save the actual DOO confirmation. Update usage checks between work chunks and stop at 30% remaining of the five-hour Codex window. Public Site deployed; 101 anonymous runtime checks and exact video hash passed. GitHub and submission state are tracked in release evidence. | No | In progress |
+| TASK-021 | After publication authorization, publish a sanitized public repository and Sites demo, verify anonymous links and exact commits, then prepare notes <=2000 characters with architecture/thesis/evidence links. Submit only after explicit submission authorization and save the actual DOO confirmation. Update usage checks between work chunks. On October 15 the user authorized using all remaining allowance for this session. Public Site and GitHub deployed; clean source passed 50 tests; 101 anonymous checks, genuine public AI runs, and the reviewed video passed. Notes are prepared. | Yes | 2026-10-15 |
+
+Competition submission is a separate pending action: obtain explicit submission authorization, then save the actual DOO confirmation. The build and release phases above are complete.
 
 ## 3. Alternatives
 

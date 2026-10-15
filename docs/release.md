@@ -15,3 +15,5 @@ The 90.70-second H.264 walkthrough remains the October 14 continuous recording o
 Engineering explanations and test notes were removed from the product interface. Competition submission has not been sent.
 
 Sites version 6 deployed successfully from hosted-source commit `ec593e18891bbd30127c2b161720ecf6776909e4`. Its deployment id is `appgdep_6ad063a7bfa481919b0d276e551732ca`. A separate browser interaction also invoked genuine DeepSeek (1126 reported tokens), then completed the 12-kit plan for $264 at minute 100.
+
+Sites version 7 deployed successfully from hosted-source commit `98d64f9f10d8096efad6f3f388bef96e95887029` (deployment `appgdep_6ad065de1c2c8191acaded10afb13bfc`). This follow-up keeps decision history open across synchronization and state changes, replaces internal event names with readable actions, and reports refused model proposals accurately. The test suite, TypeScript check and production build passed. The completed genuine AI run survived the release and reload.
