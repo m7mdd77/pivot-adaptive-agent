@@ -1,6 +1,6 @@
 # Submission readiness — October 15, 2026
 
-Status: build and public release complete. Competition entry has not been submitted.
+Status: build and public release complete. Competition entry was submitted and verified on October 15, 2026.
 
 | Official requirement | Verified artifact |
 |---|---|
@@ -20,4 +20,4 @@ The official challenge brief and rubric were rechecked on October 15. Public dem
 
 The video records deterministic planning; genuine public AI verification was collected separately. All inventory, suppliers, clocks and fulfillment effects are simulated. Live AI currently needs this PC awake and connected; no provider credential is deployed. Failed or unsafe inference pauses the run and applies no automatic fulfillment action.
 
-Before submitting, obtain explicit authorization for this Pivot entry and use the prepared notes. The currently visible challenge page requires sign-in; do not confuse reaching its form with successful submission. Save the actual confirmation after submission.
+After explicit user authorization, the reviewed repository, live demo, video and notes were submitted. DOO displayed “Entry saved” and changed the form to “Update your entry.” See evidence/submission-confirmation.json.

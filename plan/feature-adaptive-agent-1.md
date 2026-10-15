@@ -4,15 +4,15 @@ version: 1.0
 date_created: 2026-10-14
 last_updated: 2026-10-15
 owner: Mohammed and Codex
-status: Ready for submission review
+status: Submitted
 tags: [feature, adaptive-agent, planning, evidence, submission]
 ---
 
 # Introduction
 
-Status: Build and public release complete; competition entry awaits authorization.
+Status: Build and public release complete; competition entry submitted and verified.
 
-Chosen mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent). Official requirements and rubric were read in the signed-in browser on October 14, 2026. This is a new project, separate from submitted Threshold and Relay Trust. The local application, genuine AI verification, comparison tests and locally tested hosted staging now exist. The continuous walkthrough is recorded and verified. The public Site is deployed and has passed 101 runtime checks; The reviewed GitHub source is published. Competition submission remains pending.
+Chosen mission: [The Adaptive Agent](https://build.doo.ooo/challenges/adaptive-agent). Official requirements and rubric were read in the signed-in browser on October 14, 2026. This is a new project, separate from submitted Threshold and Relay Trust. The local application, genuine AI verification, comparison tests and locally tested hosted staging now exist. The continuous walkthrough is recorded and verified. The public Site is deployed and has passed 101 runtime checks; The reviewed GitHub source is published. Competition submission was verified on October 15, 2026.
 
 Pivot coordinates delivery of 12 repair kits within a fixed budget and deadline. Its initial multi-step plan becomes invalid when a supplier loses stock or its ETA changes. The system identifies the invalidated assumption, retains completed work, proposes a revision and validates it before the next effect. When revision is unsafe, it pauses for operator review.
 
@@ -110,7 +110,7 @@ The quality method is: define the falsifiable outcome, implement the smallest fu
 | TASK-020 | Prepare a continuous 90-second actual UI recording: 0-15s goal/initial plan; 15-35s stock event; 35-55s revision diff and baseline divergence; 55-75s over-budget revision contained; 75-90s persisted receipt/limits. If model requests are executed before capture, disclose cached proposals. Require recovered MP4, decoded frames and verified duration. A continuous user-selected tab capture was recovered as H.264 MP4 (90.70 seconds, 584×672); full decoding and sampled success/failure frames were checked. | Yes | 2026-10-14 |
 | TASK-021 | After publication authorization, publish a sanitized public repository and Sites demo, verify anonymous links and exact commits, then prepare notes <=2000 characters with architecture/thesis/evidence links. Submit only after explicit submission authorization and save the actual DOO confirmation. Update usage checks between work chunks. On October 15 the user authorized using all remaining allowance for this session. Public Site and GitHub deployed; clean source passed 50 tests; 101 anonymous checks, genuine public AI runs, and the reviewed video passed. Notes are prepared. | Yes | 2026-10-15 |
 
-Competition submission is a separate pending action: obtain explicit submission authorization, then save the actual DOO confirmation. The build and release phases above are complete.
+Competition submission was explicitly authorized and verified on October 15, 2026. DOO displayed “Entry saved” and “Update your entry”; the receipt is in docs/evidence/submission-confirmation.json.
 
 ## 3. Alternatives
 

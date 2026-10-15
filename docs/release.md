@@ -12,7 +12,7 @@ The automated suite has 50 passing tests. The actual Worker/D1 runtime passed 10
 
 The 90.70-second H.264 walkthrough remains the October 14 continuous recording of deterministic UI execution. Its reviewed SHA-256 is `2045a34cd1ee911ca07c5244f4d42d2a8b33c57413628e2fd05f2aaf1484bd54`. Genuine public model verification was collected separately on October 15. All suppliers and fulfillment effects are synthetic. The expensive-candidate fixture is injected deliberately and is not a provider-generated error.
 
-Engineering explanations and test notes were removed from the product interface. Competition submission has not been sent.
+Engineering explanations and test notes were removed from the product interface. Competition submission was sent with explicit user authorization and verified on October 15, 2026. DOO displayed “Entry saved” and “Update your entry”; see evidence/submission-confirmation.json.
 
 Sites version 6 deployed successfully from hosted-source commit `ec593e18891bbd30127c2b161720ecf6776909e4`. Its deployment id is `appgdep_6ad063a7bfa481919b0d276e551732ca`. A separate browser interaction also invoked genuine DeepSeek (1126 reported tokens), then completed the 12-kit plan for $264 at minute 100.
 
