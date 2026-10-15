@@ -10,6 +10,7 @@
     "start": "node --env-file-if-exists=.env server.js",
     "test": "node --test test/*.test.js",
     "check": "node scripts/check-syntax.mjs && node scripts/check-fixtures.mjs && node --test test/*.test.js",
-    "compare": "node scripts/compare.mjs"
+    "compare": "node scripts/compare.mjs",
+    "ai:worker": "node --env-file-if-exists=.env pc-ai-worker.js"
   }
 }

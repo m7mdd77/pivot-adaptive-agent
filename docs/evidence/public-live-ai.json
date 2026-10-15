@@ -1,0 +1,171 @@
+{
+  "verifiedAt": "2026-10-15T05:18:51.197Z",
+  "url": "https://pivot-adaptive-agent.choggyacc.chatgpt.site",
+  "transport": "Live hosted D1 job -> authenticated outbound PC worker -> supported Claude Code -> AgentRouter",
+  "scope": "Genuine model proposals; synthetic actions applied separately",
+  "runs": [
+    {
+      "scenarioId": "stock-loss",
+      "model": "deepseek-v4-flash",
+      "usage": {
+        "inputTokens": 196,
+        "outputTokens": 404,
+        "totalTokens": 600,
+        "cacheReadTokens": 256,
+        "cacheCreationTokens": 0
+      },
+      "candidate": {
+        "supplierId": "B",
+        "worldVersion": 2,
+        "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+        "steps": [
+          "reserve",
+          "collect",
+          "dispatch",
+          "confirm"
+        ],
+        "reason": "Supplier B is the cheapest supplier with 12 units available; total cost is 26400 cents including 1200 shipping, within the 27000 budget, and arrival at minute 100 is before the deadline of 180."
+      },
+      "receiptCountBeforeExecution": 0,
+      "delivered": 12,
+      "spendCents": 26400,
+      "arrivalMinute": 100,
+      "compensations": 0,
+      "receipts": [
+        {
+          "id": "af1b280c-c287-4d1a-bd5a-6a67d4cb1f4b",
+          "planId": "abffb7bf-0ec1-4bfa-9ec7-2b0c255ba513",
+          "step": 0,
+          "kind": "reserve",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "2e76e38b-8113-43ce-9d47-12caedf91e0d",
+          "planId": "abffb7bf-0ec1-4bfa-9ec7-2b0c255ba513",
+          "step": 1,
+          "kind": "collect",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "ca915cc8-c188-420d-a368-f9884431018e",
+          "planId": "abffb7bf-0ec1-4bfa-9ec7-2b0c255ba513",
+          "step": 2,
+          "kind": "dispatch",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "c588ec4d-fd05-40f7-ab40-c134562c6e2a",
+          "planId": "abffb7bf-0ec1-4bfa-9ec7-2b0c255ba513",
+          "step": 3,
+          "kind": "confirm",
+          "supplierId": "B",
+          "minute": 100,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+        }
+      ],
+      "auditValid": true
+    },
+    {
+      "scenarioId": "eta-delay",
+      "model": "deepseek-v4-flash",
+      "usage": {
+        "inputTokens": 381,
+        "outputTokens": 454,
+        "totalTokens": 835,
+        "cacheReadTokens": 128,
+        "cacheCreationTokens": 0
+      },
+      "candidate": {
+        "supplierId": "B",
+        "worldVersion": 3,
+        "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+        "steps": [
+          "cancel",
+          "reserve",
+          "collect",
+          "dispatch",
+          "confirm"
+        ],
+        "reason": "Supplier B is the cheapest with full availability: 12 × 2100 + 1200 shipping = 26400 cents, within the 27000 budget, and arrives at minute 100, before the 180 deadline. Supplier A has 0 available; Supplier C exceeds budget at 37200 cents."
+      },
+      "receiptCountBeforeExecution": 1,
+      "delivered": 12,
+      "spendCents": 26400,
+      "arrivalMinute": 100,
+      "compensations": 1,
+      "receipts": [
+        {
+          "id": "b26f2cd6-03c0-4ff1-8a48-58a8e3d5f19d",
+          "planId": "80562fe1-fb1f-4144-aff2-28b63b95acbd",
+          "step": 0,
+          "kind": "reserve",
+          "supplierId": "A",
+          "minute": 5,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Atlas Parts in the synthetic fulfillment store."
+        },
+        {
+          "id": "07e58940-491c-4dd9-84ea-1eb58617e798",
+          "planId": "4c3d94b3-539e-49d6-ab01-682b4eb5069a",
+          "step": 0,
+          "kind": "cancel",
+          "supplierId": null,
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "Released the prior synthetic reservation; its receipt remains."
+        },
+        {
+          "id": "cca6f879-eda6-454a-a046-63d0c40f3301",
+          "planId": "4c3d94b3-539e-49d6-ab01-682b4eb5069a",
+          "step": 1,
+          "kind": "reserve",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "reserve applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "8c9d14a6-375c-4225-a43e-87f134ba1ecc",
+          "planId": "4c3d94b3-539e-49d6-ab01-682b4eb5069a",
+          "step": 2,
+          "kind": "collect",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "collect applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "cfa3696e-cbec-4677-8f79-fde25fbbd9a6",
+          "planId": "4c3d94b3-539e-49d6-ab01-682b4eb5069a",
+          "step": 3,
+          "kind": "dispatch",
+          "supplierId": "B",
+          "minute": 10,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "dispatch applied for Beacon Supply in the synthetic fulfillment store."
+        },
+        {
+          "id": "548eea53-c014-4ee4-828d-5454eb2b329d",
+          "planId": "4c3d94b3-539e-49d6-ab01-682b4eb5069a",
+          "step": 4,
+          "kind": "confirm",
+          "supplierId": "B",
+          "minute": 100,
+          "goalHash": "471464df79294d18e382bd162e7222c998dac4ecb07f370e026e8367e18f3849",
+          "description": "confirm applied for Beacon Supply in the synthetic fulfillment store."
+        }
+      ],
+      "auditValid": true
+    }
+  ]
+}

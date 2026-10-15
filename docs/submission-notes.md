@@ -2,7 +2,7 @@ Pivot detects a broken assumption, revises its plan and keeps the same promise: 
 
 An injected $372 candidate is refused without effects. Goal, authority, stale context, duplicate receipts, revision/attempt limits and operator pause are enforced independently of model proposals. SQLite locally and D1 publicly persist plans, observations and receipts. Hosted sessions have bounded state and expired-row reclamation.
 
-Public runs are deterministic synthetic demonstrations. Four genuine local DeepSeek v4 Flash calls (3363 reported tokens) completed the two successful scenarios. Published AI evidence is recorded, and no paid API key is exposed. The continuous 90.7-second video records actual deterministic UI execution.
+Public runs use synthetic fulfillment data and support genuine DeepSeek v4 Flash proposals through an authenticated PC worker. Two live public calls completed both scenarios on October 15, using 1435 reported tokens with cache reads reported separately. Four earlier local calls used 3363 reported tokens. Evidence is recorded in the repository; no provider API key is exposed. Live AI currently requires the operator PC to stay awake. The continuous 90.7-second video records actual deterministic UI execution.
 
 Demo: https://pivot-adaptive-agent.choggyacc.chatgpt.site
 Source: https://github.com/m7mdd77/pivot-adaptive-agent

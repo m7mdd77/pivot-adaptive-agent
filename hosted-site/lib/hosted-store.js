@@ -1,3 +1,4 @@
+import {startInference,finishInference,failInference} from './hosted-inference.js';
 import {randomUUID} from 'node:crypto';import {PivotError,hash} from './contracts.js';import {createRun,trace,observeInvalidation,advance,saveRevision,verifyTrace} from './runner.js';import {applyEvent,scenarioEvent,SCENARIOS} from './world.js';import {applySyntheticStep} from './actions.js';
 function boundedPayload(sandbox){const payload=JSON.stringify(sandbox);if(new TextEncoder().encode(payload).byteLength>1500000)throw new PivotError('Sandbox storage allowance exhausted.',429);return payload;}
 export function newSandbox(){return{runs:[],posts:0,postWindow:Date.now()};}
@@ -8,7 +9,10 @@ else if(operation==='inject'||operation==='events'){const event=operation==='inj
 else if(operation==='advance'){result=advance(state);if(result.ready)result=applySyntheticStep(state,result.planId,result.step);}
 else if(operation==='step')result=applySyntheticStep(state,input.planId,input.step);
 else if(operation==='revise')result=saveRevision(state,input.candidate,'explicit demo review');
-else if(operation==='pause'){if(state.status==='completed')throw new PivotError('Completed runs cannot be paused.',409);state.status='paused';state.pauseReason='The demo operator paused the run.';trace(state,'operator.paused',{reason:state.pauseReason});result={paused:true};}
+else if(operation==='modelStart')result=startInference(state);
+else if(operation==='modelFinish')result=finishInference(state,input);
+else if(operation==='modelFail')result=failInference(state,input);
+else if(operation==='pause'){if(state.status==='completed')throw new PivotError('Completed runs cannot be paused.',409);state.status='paused';state.pendingPause=true;state.pauseReason='The run was paused.';trace(state,'operator.paused',{reason:state.pauseReason});result={paused:true};}
 else throw new PivotError('Unsupported hosted operation.',404);
 if(hash(state.goal)!==state.goalHash||!verifyTrace(state)||state.spendCents+state.heldCents>state.goal.budgetCents||state.delivered>state.goal.quantity)throw new PivotError('Run invariant failed.',409);state.runVersion++;return{state,result};}
 export class HostedStore{

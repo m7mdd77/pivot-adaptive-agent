@@ -32,6 +32,18 @@ On October 14, 2026, four genuine DeepSeek v4 Flash calls passed two complete ad
 
 Application allowances are 6 attempts/run, 3000 reserved tokens/attempt, 20 attempts/hour across this process database and a 25-second deadline. Failures count. Reserved tokens and the client's estimated cost limit are not guarantees about actual provider billing.
 
+## Live public AI through this PC
+
+The public Ask DeepSeek control queues a proposal in D1. The authenticated PC worker claims it, invokes the supported client with the existing private environment, and returns a checked proposal. Keep this PC awake and connected. From the project directory, start it with:
+
+```powershell
+node --env-file=../decision-engine/.env pc-ai-worker.js
+```
+
+The existing local worker token must match the Site’s server-only `PIVOT_AI_WORKER_TOKEN`. Never publish the token or provider key. The worker makes outbound HTTPS requests; no incoming tunnel is required. Readiness expires when its heartbeat stops. A lost or duplicate job is never retried against the model automatically.
+
+On October 15, 2026, two genuine calls from the public Site completed stock-loss and ETA-delay runs, using 1435 reported tokens plus separately reported cache reads. Both delivered 12 kits for $264 at minute 100. The ETA run preserved its original receipt and canceled the prior hold. Sanitized results are in `docs/evidence/public-live-ai.json`.
+
 ## Evidence and architecture
 
 - `npm run compare` writes measured frozen/adaptive comparison metrics to ignored `outputs/comparison-report.json`.
@@ -42,12 +54,12 @@ Application allowances are 6 attempts/run, 3000 reserved tokens/attempt, 20 atte
 
 ## Hosted source and release status
 
-`hosted-site/` preserves the current Sites Vinext starter and `sites()` integration, declaring D1 as `DB`. It has built successfully and passed actual local Worker/D1 runtime checks. Its paid model endpoint is disabled. Shared pure modules and a D1 revision comparison serialize effects. The Pivot Site is registered and publicly deployed. Competition submission is a separate authorized step.
+`hosted-site/` preserves the current Sites Vinext starter and `sites()` integration, declaring D1 as `DB`. It has built successfully and passed actual local Worker/D1 runtime checks. Its live model endpoint uses an authenticated outbound worker on the operator’s PC. Shared pure modules and a D1 revision comparison serialize effects. The Pivot Site is registered and publicly deployed. Competition submission is a separate authorized step.
 
-Inside `hosted-site/`, run `npm ci`, `npm run build`, apply `drizzle/0000_yummy_loners.sql` once with Wrangler's local D1 command from the staging README, then `npm start -- --port 3262`. For updates, follow the current Sites workflow with the retained Pivot Site identity. Preserve applied migrations. Do not copy either prior project's Site ID.
+Inside `hosted-site/`, run `npm ci`, `npm run build`, apply each unapplied migration in `drizzle/` once with Wrangler's local D1 command from the staging README, then `npm start -- --port 3262`. For updates, follow the current Sites workflow with the retained Pivot Site identity. Preserve applied migrations. Do not copy either prior project's Site ID.
 
 The actual continuous walkthrough is at `/walkthrough.mp4` (90.70 seconds, H.264, 584×672, no audio). It was captured from the user-selected Pivot tab on October 14, 2026, then transcoded without cuts. Full decoding and sampled frames verified the stock-loss completion and over-budget refusal. The controls in this recording use the deterministic planner; the genuine DeepSeek evidence was collected separately before capture. See `docs/recording-verification.md`. The local recorder remains at `/record.html` for future captures.
 
 Limits: synthetic supplier sources and effects; no external fulfillment connectors; local demonstration operator; deterministic forecasts without calibrated uncertainty; no external audit anchor. A supplier ETA event affects the unshipped route; post-dispatch external telemetry is outside this version. The frozen-plan baseline is safely blocked when it cannot meet the goal, not allowed to fabricate delivery.
 
-Hosted storage caps a serialized session at 1.5 MB and expires sessions after seven days. New-session creation reclaims bounded batches of expired state and counters. Oversized mutations are refused before persistence. All 38 automated tests pass.
+Hosted storage caps a serialized session at 1.5 MB and expires sessions after seven days. New-session creation reclaims bounded batches of expired state and counters. Oversized mutations are refused before persistence. All 50 automated tests pass.
