@@ -1,3 +1,5 @@
+Current runtime: **GPT 6.1 Sol through AgentRouter**. See [configuration and verification](docs/sol-migration.md). Dated DeepSeek recordings remain historical evidence.
+
 # Pivot — The Adaptive Agent
 
 Mission: https://build.doo.ooo/challenges/adaptive-agent
@@ -30,7 +32,7 @@ Copy `.env.example` to your ignored `.env`, add your own AgentRouter key and ins
 
 On October 14, 2026, four genuine DeepSeek v4 Flash calls passed two complete adaptive runs, using 3363 reported tokens. Both delivered 12 synthetic kits for $264 at simulated minute 100. The ETA scenario kept its old receipt and explicitly canceled the reservation. Inspect the separately labeled recorded evidence at `/verified-ai-runs.json`. A recorded response is not a fresh provider invocation.
 
-Application allowances are 6 attempts/run, 3000 reserved tokens/attempt, 20 attempts/hour across this process database and a 25-second deadline. Failures count. Reserved tokens and the client's estimated cost limit are not guarantees about actual provider billing.
+Application allowances are 6 attempts/run, 12000 reserved tokens/attempt, 20 attempts/hour across this process database and a 25-second deadline. Failures count. Reserved tokens and the client's estimated cost limit are not guarantees about actual provider billing.
 
 ## Live public AI through this PC
 

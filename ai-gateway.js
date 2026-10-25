@@ -5,12 +5,12 @@ import {DatabaseSync} from 'node:sqlite';
 import {mkdirSync,existsSync,readFileSync,writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {dirname,join} from 'node:path';
-import {modelConfig,callDeepSeek} from './src/deepseek-client.js';
+import {modelConfig,callSol} from './src/deepseek-client.js';
 import {plannerMessages,reportedUsage} from './src/planner-contract.js';
 import {object,validateGoal,validateCandidatePlan,hash,PivotError} from './src/contracts.js';
 import {GOAL} from './src/world.js';
 
-export function createGateway({config,token,directory,db,client=callDeepSeek}){
+export function createGateway({config,token,directory,db,client=callSol}){
  db.exec('CREATE TABLE IF NOT EXISTS calls(id TEXT PRIMARY KEY,created_at INTEGER NOT NULL)');
  let busy=false;
  const authorized=request=>{const value=request.headers.authorization??'';const expected='Bearer '+token;const a=Buffer.from(value),b=Buffer.from(expected);return a.length===b.length&&timingSafeEqual(a,b);};
