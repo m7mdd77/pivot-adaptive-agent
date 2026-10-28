@@ -1,4 +1,4 @@
-Current runtime: **GPT 6.1 Sol through AgentRouter**. See [configuration and verification](docs/sol-migration.md). Dated DeepSeek recordings remain historical evidence.
+Current runtime: **Qwen 3.8 27B through Cerebras**. See [configuration and fresh verification](docs/cerebras-migration.md). Earlier provider recordings and evidence remain dated history.
 
 # Pivot — The Adaptive Agent
 
@@ -28,7 +28,7 @@ SQLite in ignored `data/` persists sessions, observations, plans and receipts ac
 
 ## Optional genuine AI
 
-Copy `.env.example` to your ignored `.env`, add your own AgentRouter key and installed supported Claude Code client path, then restart. Keep keys out of browser source, exports, screenshots and Git. The model proposes; independent policy checks; advance applies a separate synthetic effect. No automatic retry, fallback or tools are enabled.
+Copy `.env.example` to your ignored `.env`, set CEREBRAS_API_KEY or CEREBRAS_KEY_FILE, then restart. Keep keys out of browser source, exports, screenshots and Git. The model proposes; independent policy checks; advance applies a separate synthetic effect. No automatic retry, fallback or tools are enabled.
 
 On October 14, 2026, four genuine DeepSeek v4 Flash calls passed two complete adaptive runs, using 3363 reported tokens. Both delivered 12 synthetic kits for $264 at simulated minute 100. The ETA scenario kept its old receipt and explicitly canceled the reservation. Inspect the separately labeled recorded evidence at `/verified-ai-runs.json`. A recorded response is not a fresh provider invocation.
 
@@ -36,7 +36,7 @@ Application allowances are 6 attempts/run, 12000 reserved tokens/attempt, 20 att
 
 ## Live public AI through this PC
 
-The public Ask DeepSeek control queues a proposal in D1. The authenticated PC worker claims it, invokes the supported client with the existing private environment, and returns a checked proposal. Keep this PC awake and connected. From the project directory, start it with:
+The public Ask AI control queues a proposal in D1. The authenticated PC worker claims it, invokes Cerebras with the existing private environment, and returns a checked proposal. Keep this PC awake and connected. From the project directory, start it with:
 
 ```powershell
 node --env-file=../decision-engine/.env pc-ai-worker.js

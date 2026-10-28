@@ -22,10 +22,10 @@ export function finishInference(state,input){
  if(hash(planningContext(state))!==attempt.contextHash)throw new PivotError('Evidence changed while AI was planning. Ask for a fresh plan.',409);
  validateCandidatePlan(input.candidate,state);
  const usage=input.usage;if(usage!==null&&(!Number.isSafeInteger(usage?.totalTokens)||usage.totalTokens<0||!Number.isSafeInteger(usage.inputTokens)||!Number.isSafeInteger(usage.outputTokens)||usage.totalTokens!==usage.inputTokens+usage.outputTokens))throw new PivotError('AI returned invalid usage.',502);
- state.pendingPlanner=null;Object.assign(attempt,{model:'gpt-6.1-sol',usage,candidate:input.candidate,finishedAt:Date.now(),status:'returned'});
+ state.pendingPlanner=null;Object.assign(attempt,{model:'qwen-3.8-27b',usage,candidate:input.candidate,finishedAt:Date.now(),status:'returned'});
  trace(state,'model.returned',{attemptId:attempt.id,model:attempt.model,usage,contextHash:attempt.contextHash,candidate:input.candidate});
  if(usage&&usage.totalTokens>12000){state.status='paused';state.pauseReason='AI request exceeded its token allowance.';attempt.status='reservation-exceeded';trace(state,'model.paused',{reason:state.pauseReason});return{allowed:false};}
- const result=saveRevision(state,input.candidate,'genuine Sol through authenticated gateway');attempt.status=result.allowed?'accepted':'refused';return result;
+ const result=saveRevision(state,input.candidate,'genuine Cerebras AI through authenticated gateway');attempt.status=result.allowed?'accepted':'refused';return result;
 }
 export function failInference(state,input){
  const attempt=state.inference.find(a=>a.id===input.attemptId);
@@ -38,7 +38,7 @@ export async function requestGateway(config,payload){
  const buffer=new Uint8Array(bytes);let offset=0;for(const chunk of chunks){buffer.set(chunk,offset);offset+=chunk.length;}
  if(!response.ok)throw new PivotError(response.status===429?'AI allowance is temporarily unavailable.':'AI is temporarily unavailable. No action was applied.',response.status===429?429:503);
  let data;try{data=JSON.parse(new TextDecoder().decode(buffer));}catch{throw new PivotError('AI returned an invalid response.',502);}
- if(data.model!=='gpt-6.1-sol')throw new PivotError('Unexpected AI model.',502);return data;
+ if(data.model!=='qwen-3.8-27b')throw new PivotError('Unexpected AI model.',502);return data;
 }
 export async function runHostedPlan({store,sandboxId,runId,config,client=requestGateway}){
  const now=Date.now(),bucket='model:global:'+Math.floor(now/3600000);

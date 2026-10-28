@@ -32,7 +32,7 @@ export async function requestQueuedPlan(db,sandboxId,runId,payload,{timeoutMs=40
  const now=Date.now();await db.prepare('INSERT INTO pivot_ai_jobs(id,sandbox_id,run_id,payload,status,created_at,lease_until) VALUES (?,?,?,?,?,?,0)').bind(payload.attemptId,sandboxId,runId,JSON.stringify(payload),'pending',now).run();
  const deadline=now+timeoutMs;
  while(Date.now()<deadline){const row=await db.prepare('SELECT status,result FROM pivot_ai_jobs WHERE id=?').bind(payload.attemptId).first();
-  if(row?.status==='completed'){let result;try{result=JSON.parse(row.result);}catch{throw new PivotError('AI returned an invalid response.',502);}if(result.model!=='gpt-6.1-sol')throw new PivotError('Unexpected AI model.',502);return result;}
+  if(row?.status==='completed'){let result;try{result=JSON.parse(row.result);}catch{throw new PivotError('AI returned an invalid response.',502);}if(result.model!=='qwen-3.8-27b')throw new PivotError('Unexpected AI model.',502);return result;}
   if(!row||row.status==='failed')throw new PivotError('AI is temporarily unavailable. No action was applied.',503);
   await new Promise(resolve=>setTimeout(resolve,pollMs));
  }

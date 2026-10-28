@@ -1,0 +1,49 @@
+{
+  "verifiedAt": "2026-10-28T07:30:49.965Z",
+  "provider": "Cerebras",
+  "model": "qwen-3.8-27b",
+  "scope": "Fresh genuine proposal-only migration checks on synthetic data. Existing operator allowance directories retained. No external actions or cached answers.",
+  "tests": {
+    "passed": 56,
+    "failed": 0,
+    "scope": "Local regression and mocked provider boundary tests; independent from the genuine call below."
+  },
+  "local": {
+    "name": "pivot",
+    "ok": true,
+    "model": "qwen-3.8-27b",
+    "usage": {
+      "inputTokens": 459,
+      "outputTokens": 152,
+      "totalTokens": 611,
+      "cacheReadTokens": 0,
+      "cacheCreationTokens": 0
+    },
+    "receipts": 0,
+    "elapsedMs": 432
+  },
+  "publicVerification": {
+    "name": "pivot",
+    "ok": true,
+    "model": "qwen-3.8-27b",
+    "usage": {
+      "inputTokens": 459,
+      "outputTokens": 144,
+      "totalTokens": 603,
+      "cacheReadTokens": 0,
+      "cacheCreationTokens": 0
+    },
+    "decision": "accepted",
+    "executionReceipts": 0,
+    "elapsedMs": 10150
+  },
+  "deployment": {
+    "name": "pivot",
+    "project_id": "appgprj_6acfb048b3e48191a7b96982a9465fef",
+    "version_id": "appgprj_6acfb048b3e48191a7b96982a9465fef~appgver_28e61047eb108191be518dd40e041998",
+    "deployment_id": "appgdep_6ae1a8b92068819183b13b73fa4ba7aa",
+    "status": "succeeded",
+    "url": "https://pivot-adaptive-agent.choggyacc.chatgpt.site",
+    "commit_sha": "7a0cc24ed5db7694bc4abfeb3dea483a15eac0d2"
+  }
+}
